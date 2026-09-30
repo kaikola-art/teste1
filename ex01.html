@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estudos do DOM</title>
+    <style>
+        body{
+            background-color: rgb(255, 143, 143);
+            font: normal 18px;
+            color: rgb(116, 22, 22);
+        }
+    </style>
+</head>
+<body>
+    <h1>Iniciando estudos DOM</h1>
+    <h2>Selecionando os elementos DOM</h2>
+    <p>Posso selecionar os elementos <strong>DOM</strong>: por marca (tagname); por ID; por classe; por seletor (por CSS)</p>
+    <p id="p" class="p">Existem alguns que nós vamos utilizar</p>
+    <h3>Por marca (tagname)</h3>
+    <p>O comando é o getElementsBytagname</p>
+    <p Id= "plural"> Como está no plural; getElements... eu preciso dizer o número dos elementos que eu quero utilizar, lemrabando que no JS, a contagem de elementos começa do 0</p>
+    <h3>Por Id</h3>
+    <p>O comando é: getElementById</p>
+    <p>preciso atribuir um ID na tag que eu quero manipular</p>
+    <h3>Por class</h3>
+    <p>O comando é getElementsByClassName</p>
+    <h3>Por seletor de CSS</h3>
+    <p>O comando é querySelector</p>
+    <p>Se a tag que eu quero selecionar estier com um Id eu uso #</p>
+    <h3>Selecionando elementos por name</h3>
+    <p>O comando é getElementsByName</p>
+    <p name="lorem">Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit, assumenda?</p>
+    <script>
+        var p1 = window.document.getElementsByTagName('p')[0]
+        /*window.document.write('Está escrito assim: '+p1.innerHTML)
+        Esse método é a interpolação*/
+        window.document.write(`Está escrito assim: ${p1.innerHTML}`)
+        /*Esse método chama-se template string*/
+        /*var p2 = window.document.getElementById('p')
+        p2.style.color = 'purple'
+        p2.style.background = 'white'*/
+        var p2 = document.getElementsByClassName('p')[0]
+        p2.style.color='white'
+        /*var p4 = document.querySelector ('p#plural')
+        p4.innerHTML = 'Um cheiro pra tu!'*/
+        document.querySelector('p#plural').innerHTML = 'Um cheiro pra tu!'
+        var p11 = document.getElementsByName('lorem')[0]
+        p11.style.background= 'orange'
+    </script>
+</body>
+</html>
